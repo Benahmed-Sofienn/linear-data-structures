@@ -1,0 +1,36 @@
+ALGORITHM Overlapping-sum1
+VAR
+    i: INTEGER;
+    j: INTEGER;
+    k: INTEGER := 0;
+    sum: INTEGER :=0;
+    Set1 : ARRAY_OF INTEGER[];
+    Set2 : ARRAY_OF INTEGER[];
+
+BEGIN
+
+    FOR i FROM 0 TO Set1.length-1 STEP 1  DO
+        FOR j FROM 0 TO Set2.length-1 STEP 1  DO
+                IF (Set1[i]=Set2[j]) THEN
+                    k=1
+                END_IF
+        END_FOR
+        IF (k=0) THEN
+            sum=sum +Set1[i]
+        END_IF
+        k=0
+    END_FOR
+     FOR j FROM 0 TO Set2.length-1 STEP 1  DO
+        FOR i FROM 0 TO Set1.length-1 STEP 1  DO
+                IF (Set2[j]=Set1[i]) THEN
+                    k=1
+                END_IF
+        END_FOR
+        IF (k=0) THEN
+            sum=sum +Set2[j]
+        END_IF
+    END_FOR
+    Write(sum)
+
+
+END

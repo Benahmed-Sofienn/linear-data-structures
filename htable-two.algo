@@ -1,0 +1,26 @@
+ALGORITHM Htable_sum2
+VAR
+    i,j,k: INTEGER ;
+    sum : INTEGER :=0;
+
+BEGIN
+    FOR i FROM 0 TO Set1.length-1 STEP 1  DO
+    htab.insert(set1[i],1)
+    END_FOR
+    FOR j FROM 0 TO set2.length-1 STEP 1  DO
+        FOR i FROM 0 TO set1.length-1 STEP 1 DO
+        IF (set2.j=set1.i) THEN
+         htab.i.value=2   
+         BREAK  
+        ELSE_IF (i=set1.length-1)
+            htab.insert(set2[j],1)
+        END_IF
+        END_FOR
+    END_FOR
+    FOR k FROM 0 TO htab.length-1 STEP 1  DO
+        IF (htab[k].value=2) THEN
+            sum=sum+htab.k.keys
+        END_IF
+    END_FOR
+    Write(sum)
+END
